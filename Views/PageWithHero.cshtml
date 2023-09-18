@@ -2,5 +2,22 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.PageWithHero>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = null;
+	Layout = "_Layout.cshtml";
+	ViewData["PageTitle"] = @Model.Value("pageTitle");
+	ViewData["PageDescription"] = @Model.Value("pageDescription");
+	ViewData["PageKeyWords"] = @Model.Value("pageKeyWords");
+	ViewData["PageAuthor"] = @Model.Value("pageAuthor");
 }
+
+<header>
+    
+    @await Html.PartialAsync("_Nav")
+    @await Html.PartialAsync("_Hero")
+    
+</header>
+
+<main>
+    
+    @await Html.PartialAsync("_Brands")
+    
+</main>
