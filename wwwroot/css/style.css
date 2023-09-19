@@ -1,3 +1,6 @@
+
+
+
 :root {
   --bg-color-primary: #FFFFFF;
   --bg-color-secondary:#F0EFE9;
@@ -818,14 +821,14 @@ footer .footer-area .container ul li a:hover {
 .lower-header-area .container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .lower-header-area .container .content-column {
-  flex: 1;
   display: flex;
   margin: 100px 100px;
   margin-left: 100px;
 }
-.lower-header-area .container .content-column h2 {
+.lower-header-area .container .content-column h1 {
   color: #191919;
   font-family: "Inter", sans-serif;
   font-size: 56px;
@@ -833,7 +836,14 @@ footer .footer-area .container ul li a:hover {
   font-weight: 700;
   line-height: normal;
 }
-.lower-header-area .container .content-column p {
+.lower-header-area .container .content-column a {
+  margin-left: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+.lower-header-area .container .content-column span {
   margin-left: 20px;
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -883,7 +893,7 @@ footer .footer-area .container ul li a:hover {
 .news-main-area .container .content-column-left .section-header {
   margin-top: 100px;
 }
-.news-main-area .container .content-column-left .section-header h1 {
+.news-main-area .container .content-column-left .section-header h2 {
   color: #191919;
   font-family: "Inter", sans-serif;
   font-size: 45px;
