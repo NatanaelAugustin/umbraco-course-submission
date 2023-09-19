@@ -5,14 +5,20 @@
 @inject IPublishedUrlProvider PublishedUrlProvider
 
 
-  <section class="lower-header-area">
-    <div class="container">
+@{ var selection = Model.Ancestors().ToArray(); }
+
+@if (selection?.Length > 0)
+{
+    <section class="lower-header-area">
+        <div class="container">
             <div class="content-column">
-                <h1>Let's Connect</h1>
-                <p>Home contact</p>
+                 <h1>@Model.Value("pageTitle")</h1>
+                    @foreach (var item in selection.OrderBy(x => x.Level))
+                     {
+                        <a href="@item.Url(PublishedUrlProvider)" class="me3">@item.Name</a>
+                     }
+                <span>@Model.Name</span>
             </div>
         </div>
     </section>
-
-
-
+}
