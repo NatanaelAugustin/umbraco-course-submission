@@ -825,7 +825,7 @@ footer .footer-area .container ul li a:hover {
   margin: 100px 100px;
   margin-left: 100px;
 }
-.lower-header-area .container .content-column h1 {
+.lower-header-area .container .content-column h2 {
   color: #191919;
   font-family: "Inter", sans-serif;
   font-size: 56px;
@@ -883,7 +883,7 @@ footer .footer-area .container ul li a:hover {
 .news-main-area .container .content-column-left .section-header {
   margin-top: 100px;
 }
-.news-main-area .container .content-column-left .section-header h2 {
+.news-main-area .container .content-column-left .section-header h1 {
   color: #191919;
   font-family: "Inter", sans-serif;
   font-size: 45px;
