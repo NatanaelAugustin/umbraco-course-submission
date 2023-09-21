@@ -1016,9 +1016,8 @@ footer .footer-area .container ul li a:hover {
   margin-left: 20px;
 }
 .article-details-area .container .articles {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
   margin-bottom: 40px;
 }
