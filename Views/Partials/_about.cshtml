@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+
+
+
+<section class="about-area">
+    <div class="container">
+        <div class="image-left">
+           @{
+                var aboutImage = Model.Value<MediaWithCrops>("aboutImage");
+                if (aboutImage != null)
+                {
+                    <img src="@aboutImage.MediaUrl()" alt="@Model.Value("aboutTitle")" />
+                }
+            }
+            
+            <div class="image-text">
+                <h2>@Model.Value("aboutPopUpHeading")</h2>
+                <p>@Model.Value("aboutPopUpText")</p>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="red-title">@Model.Value("aboutTitle")</div>
+            <h2>@Model.Value("aboutHeading")</h2>
+            <p>
+                @Model.Value("aboutText")
+            </p>
+               <p>@Model.Value("aboutText2")</p>
+            <div class="about-buttons">
+                <a class="black-btn" href="@Model.Value("aboutButtonUrl")">@Model.Value("aboutTextButton") <i class="fa fa-arrow-circle-right"></i></a>
+                <a class="white-btn" href="">Play video<i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
