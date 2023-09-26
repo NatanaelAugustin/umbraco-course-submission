@@ -23,7 +23,6 @@ header {
   color: var(--text-color);
   background-color: var(--bg-color-secondary);
   position: relative;
-  z-index: 0;
 }
 
 .nav-area {
@@ -169,7 +168,6 @@ header {
   padding: 60px 0px;
 }
 .about-area .container {
-  padding: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
@@ -267,7 +265,7 @@ header {
 .service-area .container .service-cards .umb-block-list .service-card .service-card-links {
   display: flex;
   justify-content: flex-end;
-  padding: 20px 0px 0px 0xp;
+  padding: 20px 0px 0px 0px;
 }
 .service-area .container .service-cards .umb-block-list .service-card:hover {
   background-color: var(--button-color-primary);
@@ -283,7 +281,6 @@ header {
 
 .why-us-area {
   position: relative;
-  z-index: o;
   padding: 60px 0px 0px 0px;
 }
 .why-us-area .container {
@@ -347,9 +344,10 @@ header {
 
 .why-us-background-image {
   background-color: var(--bg-color-secondary);
-  width: 1000px;
+  width: 1200px;
   height: 425px;
   position: absolute;
+  margin-right: 150px;
   right: 0;
   bottom: 0;
   z-index: -1;
@@ -547,7 +545,7 @@ footer .footer-area {
   position: relative;
   z-index: 0;
   padding: 70px 0;
-  border: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 footer .footer-area .container {
   display: grid;
@@ -821,9 +819,7 @@ footer .footer-area .container ul li a:hover {
   justify-content: center;
 }
 .lower-header-area .container .content-column {
-  display: flex;
   margin: 100px 100px;
-  margin-left: 100px;
 }
 .lower-header-area .container .content-column h1 {
   color: #191919;
@@ -832,19 +828,24 @@ footer .footer-area .container ul li a:hover {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  padding-top: 20px;
 }
-.lower-header-area .container .content-column a {
-  margin-left: 20px;
+.lower-header-area .container .content-column .inline-tags {
+  display: flex;
+  justify-content: center;
+}
+.lower-header-area .container .content-column .inline-tags a {
+  justify-content: center;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  margin-right: 10px;
 }
-.lower-header-area .container .content-column span {
-  margin-left: 20px;
+.lower-header-area .container .content-column .inline-tags span {
+  justify-content: center;
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 800;
+  padding-left: 20px;
 }
 
 .news-main-area .container {
@@ -990,7 +991,7 @@ footer .footer-area .container ul li a:hover {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}+
+}
 
 .article-details-area {
   position: relative;
@@ -1018,6 +1019,7 @@ footer .footer-area .container ul li a:hover {
 .article-details-area .container .articles {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
   gap: 10px;
   margin-bottom: 40px;
 }
@@ -1145,18 +1147,21 @@ footer .footer-area .container ul li a:hover {
 }
 .contact-area .container .connect-form form .fname-text {
   padding-bottom: 30px;
+  padding-top: 10px;
 }
 .contact-area .container .connect-form form .fname-text input {
   height: 50px;
 }
 .contact-area .container .connect-form form .email-text {
   padding-bottom: 30px;
+  padding-top: 10px;
 }
 .contact-area .container .connect-form form .email-text input {
   height: 50px;
 }
 .contact-area .container .connect-form form .area-text {
   padding-bottom: 30px;
+  padding-top: 10px;
 }
 .contact-area .container .connect-form form .area-text input {
   height: 150px;
@@ -1280,6 +1285,7 @@ footer .footer-area .container ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
 }
 .article-page-buttons .item-link {
   color: var(--button-color-secondary);
@@ -1295,4 +1301,28 @@ footer .footer-area .container ul li a:hover {
 }
 .article-page-buttons .item-link.link-next {
   margin-right: 15px;
+}
+
+.error-message {
+  color: red;
+}
+
+.under-construction-area {
+  margin: 100px 100px;
+}
+.under-construction-area .container {
+  background-color: var(--bg-color-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+.under-construction-area .container h1 {
+  color: #191919;
+  font-family: "Inter", sans-serif;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 20px 20px;
 }/*# sourceMappingURL=style.css.map */
