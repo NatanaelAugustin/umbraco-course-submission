@@ -1,0 +1,83 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using umbraco_course_submission.Models;
+@{
+    Layout = "LayoutWithBreadcrumb.cshtml";
+
+    var contactForm = new ContactForm();
+}
+
+<section class="contact-area">
+    <div class="container">
+        <div class="contact-boxes">
+            <div class="contact-box">
+                <div class="contact-icon">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </div>
+                <div class="contact-text">
+                    <h2>Visit Us</h2>
+                    <p>@Model.Value("contactBoxesStreetName")</p>
+                    <p>@Model.Value("contactBoxPostalCode") @Model.Value("contactBoxCity")</p>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="contact-icon">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div class="contact-text">
+                    <h2>Call Us</h2>
+                    <p>@Model.Value("contactBoxFirstPhoneNumber")</p>
+                    <p>@Model.Value("contactBoxSecondPhoneNumber")</p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <div class="contact-icon">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="contact-text">
+                    <h2>Email Us</h2>
+                    <p>@Model.Value("contactBoxFirstEmail")</p>
+                    <p>@Model.Value("contactBoxSecondEmail")</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="connect-form">
+            <h2>Leave us a message<br />for any information</h2>
+
+            @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post))
+            {
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <span class="error-message" asp-validation-for="@contactForm.Name"> </span>
+                <div class="fname-text">
+                    <input asp-for="@contactForm.Name" type="text" placeholder="Name*" /><br />
+                </div>
+                 <span class="error-message" asp-validation-for="@contactForm.Email"> </span>
+                <div class="email-text">
+                    <input asp-for="@contactForm.Email" type="email" placeholder="Email*" /><br />
+                </div>
+                 <span class="error-message" asp-validation-for="@contactForm.Message"> </span>
+                <div class="area-text">
+                    <input asp-for="@contactForm.Message" type="text" placeholder="Your Message*" /><br />
+                </div>
+
+                <div class="button-area"><input type="submit" value="Send Message" /></div>
+             }
+        </div>
+    </div>
+    
+    <div class="google-maps-area">
+            <div class="google-maps">
+                <iframe
+                    src="@Model.Value("googleMapsUrl")"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+    </div>
+    
+</section>

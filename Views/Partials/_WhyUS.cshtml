@@ -1,0 +1,51 @@
+﻿@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+
+
+<section class="why-us-area">
+    <div class="why-us-background-image"></div>
+    <div class="container">
+        <div class="content-column">
+            <div class="red-title">@Model.Value("whyUsTitle")</div>
+            <h2>@Model.Value("whyUsHeader")</h2>
+                <ul>
+                    <li>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        <h4>Process Excellence</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur.</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+                        <h4>Strategic Planning</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur.</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                        <h4>Experience Design</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur.</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-braille" aria-hidden="true"></i>
+                        <h4>Artificial Intelligence</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur.</p>
+                    </li>
+                </ul>
+        </div>
+        <div class="image-left">
+            
+          @{
+                var whyUsImage = Model.Value<MediaWithCrops>("whyUsImage");
+                if (whyUsImage != null)
+                {
+                    <img src="@whyUsImage.MediaUrl()" alt="@Model.Value("whyUsTitle")" />
+                }
+            }
+        
+        </div>
+    </div>
+</section>
+
+

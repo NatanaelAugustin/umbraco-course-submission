@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+    
+<section class="hero-area">
+    <div class="container">
+        <div class="text-right">
+            <h1>@Model.Value("heroTitle")</h1>
+            <p>@Model.Value("heroDescription")</p>
+            <div class="button-links">
+                <a class="yellow-btn" href="@Model.Value("heroButtonUrl")"
+                    >@Model.Value("heroButtonText") <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                 <a class="yellow-btn" href="/services"
+                    >Learn More <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="image-left">
+            @{
+                var heroImage = Model.Value<MediaWithCrops>("heroImage");
+                if (heroImage != null)
+                {
+                    <img src="@heroImage.MediaUrl()" alt="@Model.Value("heroTitle")" />
+                }
+            }
+        
+        </div>
+    </div>
+</section>

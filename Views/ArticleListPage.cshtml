@@ -1,0 +1,115 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticleListPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Services;
+@using Umbraco.Cms.Core.Models.PublishedContent;
+@inject IUserService UserService;
+
+@{
+	Layout = "LayoutWithBreadcrumb.cshtml";
+	var userService = UserService;
+	var image = Model.Value<IPublishedContent>("newsImages");
+	
+}
+
+ <section class="news-main-area">
+    <div class="container">
+        <div class="content-column-left">
+            <div class="section-header">
+                <h2>@Model.Name</h2>
+                <p><span>@Model.CreateDate.ToString("MMM dd, yyyy") <i class="fa fa-circle" aria-hidden="true"></i></span><span>@Model.Value("newsCartegory")<i class="fa fa-circle" aria-hidden="true"></i></span><span>@Model.CreatorName(UserService)</span></p>
+            </div>
+
+            <img src="@image.Url()" alt="">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce
+                posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna
+                eros quis urna
+            </p>
+            <p>
+                Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.Pellentesque habitant morbi tristique
+                senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et
+                orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. uspendisse dui purus,
+                scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis
+                eleifend. Ut nonummy.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce
+                posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna
+                eros quis urna. unc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant
+                morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy
+                pede. Mauris et orci
+            </p>
+            <p>
+                Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.Suspendisse dui purus, scelerisque
+                at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut
+                nonummy
+            </p>
+            <h5>
+                <span>"</span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit
+                amet commodo magna eros quis urna.
+            </h5>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce
+                posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna
+                eros quis urna. unc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant
+                morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            </p>
+            
+            
+            <div class="button-links">
+                
+               @foreach(var tag in Model.Value<IEnumerable<string>>("newTags"))
+               {
+                 <a class="black-border-btn" href="#">@tag</a>
+               }
+                
+               
+                
+            </div>
+        </div>
+
+        <div class="content-column-right">
+            <form method="post" action="">
+                <input type="search" placeholder="Type Search..." />
+            </form>
+
+            <div class="recent-posts">
+                <h2>Recent Posts</h2>
+
+                <div class="recent-post">
+                    <h5>How To Blow Through Capital At An Incredible Rate</h5>
+                    <p>Jan 14, 2020</p>
+                </div>
+
+                <div class="recent-post">
+                    <h5>Design Studios That Everyone Should Know About?</h5>
+                    <p>Jan 14, 2020</p>
+                </div>
+
+                <div class="recent-post">
+                    <h5>How did we get 1M+ visitors in 30 days without anything!</h5>
+                    <p>Jan 14, 2020</p>
+                </div>
+
+                <div class="recent-post">
+                    <h5>Figma On Figma: How We Built Our Website Design System</h5>
+                    <p>Jan 14, 2020</p>
+                </div>
+            </div>
+
+            <div class="categories">
+                <h2>Categories</h2>
+                <p>Technology - 20 Posts</p>
+                <p>Freelancing - 07 Posts</p>
+                <p>Writing - 16 Posts</p>
+                <p>Marketing - 11 Posts</p>
+                <p>Business - 35 Posts</p>
+                <p>Education - 14 Posts</p>
+            </div>
+        </div>
+    </div>
+ </section>
+ 
+ 

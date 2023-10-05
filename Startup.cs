@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using umbraco_course_submission.Context;
+using umbraco_course_submission.Service;
+
 namespace umbraco_course_submission
 {
     public class Startup
@@ -29,6 +33,8 @@ namespace umbraco_course_submission
         /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext>(x => x.UseSqlite(_config.GetConnectionString("SqliteDB")));
+            services.AddScoped<SubService>();
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()
                 .AddWebsite()
