@@ -7,7 +7,7 @@ This project is a submission for the Umbraco course, designed for learning about
 To get started with this project, follow these steps:
 
 1. Clone the repository to your local machine.
-2. Open the solution file in Visual Studio.
+2. Open the solution file in Visual Studio or Visual Studio Code.
 3. Run the project.
 
 ## Prerequisites
@@ -38,10 +38,6 @@ This project was built using the following technologies:
 - [Umbraco CMS](https://umbraco.com/)
 - [ASP.NET Core](https://dotnet.microsoft.com/apps/aspnet)
 - [SQLite](https://www.sqlite.org/)
-
-## Versioning
-
-This project follows the Semantic Versioning (SemVer) standard.
 
 ## Authors
 
