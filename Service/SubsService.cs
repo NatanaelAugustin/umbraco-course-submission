@@ -15,9 +15,11 @@ namespace umbraco_course_submission.Service
 
         public async Task AddSubsAsync(NewsLetterForm form)
         {
-            _context.Subs.Add(new Entities.SubsEntity { Email = form.Email });
-            await _context.SaveChangesAsync();
-
+            if (_context.Subs != null)
+            {
+                _context.Subs.Add(new Entities.SubsEntity { Email = form.Email });
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

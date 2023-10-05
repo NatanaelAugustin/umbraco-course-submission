@@ -4,7 +4,7 @@ namespace umbraco_course_submission.Models
 {
     public class NewsLetterForm
     {
-        [Required]
+        [Required(ErrorMessage = "Please enter your email")]
         public string Email { get; set; } = null!;
     }
 }

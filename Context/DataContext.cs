@@ -14,6 +14,6 @@ namespace umbraco_course_submission.Context
         }
 
 
-        public DbSet<SubsEntity> Subs { get; set; }
+        public DbSet<SubsEntity>? Subs { get; set; }
     }
 }
